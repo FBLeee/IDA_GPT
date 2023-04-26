@@ -54,7 +54,7 @@ class GepettoPlugin(idaapi.plugin_t):
     rename_menu_path = "Edit/Gepetto/" + _("Rename variables")
     wanted_name = 'Gepetto'
     wanted_hotkey = ''
-    comment = _("Uses gpt-3.5-turbo to enrich the decompiler's output")
+    comment = _("Uses gpt-free to enrich the decompiler's output")
     help = _("See usage instructions on GitHub")
     menu = None
 
@@ -68,7 +68,7 @@ class GepettoPlugin(idaapi.plugin_t):
                                               _('Explain function'),
                                               ExplainHandler(),
                                               "Ctrl+Alt+G",
-                                              _('Use gpt-3.5-turbo to explain the currently selected function'),
+                                              _('Use gpt-free to explain the currently selected function'),
                                               199)
         idaapi.register_action(explain_action)
         idaapi.attach_action_to_menu(
@@ -79,7 +79,7 @@ class GepettoPlugin(idaapi.plugin_t):
                                              _('Rename variables'),
                                              RenameHandler(),
                                              "Ctrl+Alt+R",
-                                             _("Use gpt-3.5-turbo to rename this function's variables"),
+                                             _("Use gpt-free to rename this function's variables"),
                                              199)
         idaapi.register_action(rename_action)
         idaapi.attach_action_to_menu(
@@ -142,7 +142,7 @@ def comment_callback(address, view, response):
     # Refresh the window so the comment is displayed properly
     if view:
         view.refresh_view(False)
-    print(_("gpt-3.5-turbo query finished!"))
+    print(_("gpt-free query finished!"))
 
 
 # -----------------------------------------------------------------------------
@@ -302,36 +302,6 @@ def query_model(query, cb, max_tokens=2500):
 
         ida_kernwin.execute_sync(functools.partial(cb, response=response),
                                  ida_kernwin.MFF_WRITE)
-
-        # response = openai.ChatCompletion.create(
-        #     model="gpt-3.5-turbo",
-        #     messages=[
-        #         {"role": "user", "content": query}
-        #     ]
-        # )
-        # ida_kernwin.execute_sync(functools.partial(cb, response=response.choices[0]["message"]["content"]),
-        #                          ida_kernwin.MFF_WRITE)
-    # except openai.InvalidRequestError as e:
-    #     # Context length exceeded. Determine the max number of tokens we can ask for and retry.
-    #     m = re.search(r'maximum context length is (\d+) tokens, however you requested \d+ tokens \((\d+) in your '
-    #                   r'prompt;', str(e))
-    #     if not m:
-    #         print(
-    #             _("gpt-3.5-turbo could not complete the request: {error}").format(error=str(e)))
-    #         return
-    #     (hard_limit, prompt_tokens) = (int(m.group(1)), int(m.group(2)))
-    #     max_tokens = hard_limit - prompt_tokens
-    #     if max_tokens >= 750:
-    #         print(_("Context length exceeded! Reducing the completion tokens to "
-    #                 "{max_tokens}...").format(max_tokens=max_tokens))
-    #         query_model(query, cb, max_tokens)
-    #     else:
-    #         print(
-    #             "Unfortunately, this function is too big to be analyzed with the model's current API limits.")
-
-    # except openai.OpenAIError as e:
-    #     print(
-    #         _("gpt-3.5-turbo could not complete the request: {error}").format(error=str(e)))
     except Exception as e:
         print(_("General exception encountered while running the query: {error}").format(
             error=str(e)))
@@ -345,7 +315,7 @@ def query_model_async(query, cb):
     :param query: The request to send to gpt-3.5-turbo
     :param cb: Tu function to which the response will be passed to.
     """
-    print(_("Request to gpt-3.5-turbo sent..."))
+    print(_("Request to gpt-free sent..."))
     t = threading.Thread(target=query_model, args=[query, cb])
     t.start()
 
