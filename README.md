@@ -1,4 +1,4 @@
-# IDA_republication_ChatGPT
+# IDA_CoverChatGPT
 利用现网开放不需要key的网站（同样能力要弱于真正的chatGpt-3.5），来解释IDA反汇编代码
 
 ## 设置
