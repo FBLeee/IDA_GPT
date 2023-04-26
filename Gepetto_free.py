@@ -168,7 +168,36 @@ class ExplainHandler(idaapi.action_handler_t):
         return idaapi.AST_ENABLE_ALWAYS
 
 # -----------------------------------------------------------------------------
+def rename_lvar(ea, src, dst):
+    def make_unique_name(name, taken):
+        if name not in taken:
+            return name
+        fmt = "%s_%%i" % name
+        for i in range(3, 1024):
+            tmpName = fmt % i
+            if tmpName not in taken:
+                return tmpName
+        return "i_give_up"
 
+    #  if you want to use an existing view:
+    #      widget = ida_kernwin.find_widget('Pseudocode-Y')
+    #      vu = ida_hexrays.get_widget_vdui(widget)
+    func = idaapi.get_func(ea)
+    if func:
+        ea = func.start_ea
+        vu = idaapi.open_pseudocode(ea, 0)
+        names = [n.name for n in vu.cfunc.lvars]
+        if dst in names:
+            dst = make_unique_name(dst, names)
+        lvars = [n for n in vu.cfunc.lvars if n.name == src]
+        if len(lvars) == 1:
+            print("renaming {} to {}".format(lvars[0].name, dst))
+            vu.rename_lvar(lvars[0], dst, 1)
+            # how to close the view without a widget object?
+            #     idautils.close_pseudocode (nope)
+            #     ida_kerwin.close_widget   (nope)
+        else:
+            print("couldn't find var {}".format(src))
 
 def rename_callback(address, view, response, retries=0):
     """
