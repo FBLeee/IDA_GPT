@@ -265,20 +265,15 @@ class RenameHandler(idaapi.action_handler_t):
 
 def updateImage(query):
     tinydict = {}
-    # 获取系统代理配置
     proxy_url = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
-    # 设置代理
     proxies = {'http': proxy_url, 'https': proxy_url}
     if (proxies is None):
-        print("使用7890端口！")
         proxies = {'http': 'http://localhost:7890',
                    'https': 'http://localhost:7890'}
-    # headers = {'Origin': 'https://chat12.yqcloud.top' , 'Referer': 'https://chat12.yqcloud.top/'}
     input_str = query
     if (input_str is None or input_str == "exit"):
         sys.exit()
-    # print("问：", input_str)
-    url = 'https://api.aichatos.cloud/api/generateStream'
+    m = 'https://api.aichatos.cloud/api/generateStream'
     tinydict2 = {"prompt": "nihao"}
     tinydict2["prompt"] = input_str
     tinydict.update(tinydict2)
@@ -289,10 +284,7 @@ def updateImage(query):
     tinydict4 = {"network": True, "system": "",
                  "withoutContext": False, "stream": False}
     tinydict.update(tinydict4)
-    # tinydict_test = {"prompt":"你好","userId":"#/chat/1682472507104","network":True,"system":"","withoutContext":False,"stream":False}
-    x = requests.post(url, data=tinydict, proxies=proxies)
-    # print(x.text)
-    # 取出字典中的值
+    x = requests.post(m, data=tinydict, proxies=proxies)
     return_str = x.text
 
     return return_str
