@@ -10,4 +10,4 @@
 ## 致谢
 [免费使用的仿chatGPT网站](https://chat12.yqcloud.top)  ，有兴趣自行了解  
 [Gepetto](https://github.com/JusticeRage/Gepetto)，站在大神Gepetto肩膀进行修改以下脚本  
-[Kaspersky](https://www.kaspersky.com/), for funding all my research
+[Hex Rays](https://hex-rays.com/), the makers of IDA for their lightning fast support
