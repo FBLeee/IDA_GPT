@@ -22,8 +22,6 @@ import idc
 # EDIT VARIABLES IN THIS SECTION
 # =============================================================================
 
-# Set your API key here, or put it in the OPENAI_API_KEY environment variable.
-# openai.api_key = ""
 
 # Specify the program language. It can be "fr_FR", "zh_CN", or any folder in gepetto-locales.
 # Defaults to English.
