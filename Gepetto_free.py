@@ -317,58 +317,6 @@ def updateImage(query):
 
     return return_str
     
-    
-    
-def updateImage2(query):
-
-    #初始化json
-    tinydict = {"stream":True,"model":"gpt-3.5-turbo","temperature":1,"presence_penalty":0}
-    input_str = query
-    if(input_str is None or input_str == "exit"):
-        sys.exit()
-    url = 'https://43207228146.ai001.live/api/chat-stream'  
-    tinydict2 = {"messages":[{"role":"user","content":"nihao"}]}
-    for feature  in tinydict2["messages"]:
-        feature["content"] = input_str
-    tinydict.update(tinydict2)
-    json_data = json.dumps(tinydict)
-    bytes_data = bytes(json_data, 'utf-8')   
-    # 获取系统代理配置
-    proxy_url = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
-    # 设置代理
-    proxies = {'http': proxy_url, 'https': proxy_url}
-    if( proxies is None):
-        print("使用7890端口！")
-        proxies = {'http': 'http://localhost:7890', 'https':'http://localhost:7890'}
-    #更新了time
-    time_new = (time.time())
- 
-    cookie_str = f'Hm_lvt_415448b475d5767ab10a708c6b7efd29={int(time_new)}; Hm_lpvt_415448b475d5767ab10a708c6b7efd29={int(time_new)}'
-    #print(cookie_str)
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
-    'Cookie': 'Hm_lvt_415448b475d5767ab10a708c6b7efd29=1682566187; Hm_lpvt_415448b475d5767ab10a708c6b7efd29=1682566187',
-    'Host': '43207228146.ai001.live',
-    'Content-Length': '244',
-    'Connection': 'keep-alive',
-    'sec-ch-ua': '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
-    'Content-Type': 'application/json',
-    'sec-ch-ua-mobile': '?0',
-    'path': 'v1/chat/completions',
-    'sec-ch-ua-platform': '"Windows"',
-    'Accept': '*/*',
-    'Origin': 'https://43207228146.ai001.live',
-    'Sec-Fetch-Site': 'same-origin',
-    'Sec-Fetch-Mode': 'cors',
-    'Sec-Fetch-Dest': 'empty',
-    'Referer': 'https://43207228146.ai001.live/',
-    'Accept-Encoding': 'utf-8',
-    'Accept-Language': 'zh-CN,zh;q=0.9'
-    }
- 
-    x = requests.post(url, data = bytes_data,proxies = proxies, headers=headers) 
-    return_str = x.text
-    return return_str
-
 
 def query_model(query, cb, max_tokens=2500):
     """
