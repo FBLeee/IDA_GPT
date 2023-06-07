@@ -1,4 +1,4 @@
-# IDA_CoverChatGPT
+# IDA_ChatGPT
 利用现网开放不需要key的网站，来解释IDA反汇编代码
 
 ## 设置
