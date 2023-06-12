@@ -12,5 +12,5 @@
 ## 致谢
 [网站](https://chat12.yqcloud.top)  ，有兴趣自行了解  
 [Gepetto](https://github.com/JusticeRage/Gepetto)，站在大神Gepetto肩膀进行修改以下脚本  
-[Hex Rays](https://hex-rays.com/), the makers of IDA for their lightning fast support
-需用clash魔法上网（port：7890）
+[Hex Rays](https://hex-rays.com/), the makers of IDA for their lightning fast support  
+[Clash for Windows](https://clashforwindows.org/clash-for-windows-official/)需用clash魔法上网（port：7890）
