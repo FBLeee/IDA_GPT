@@ -1,5 +1,5 @@
 # IDA_ChatGPT
-利用现网开放不需要key的网站，来解释IDA反汇编代码
+利用现网开放不需要key的网站，来解释IDA反汇编代码.
 
 ## 设置
 将gepetto-locales 和 Gepetto_free.py脚本放到 IDA 插件文件夹 ( $IDAUSR/plugins)
