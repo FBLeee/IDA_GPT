@@ -297,7 +297,7 @@ def updateImage(query):
     if (proxies is None):
         proxies = {'http': 'http://localhost:7890',
                    'https': 'http://localhost:7890'}
-    headers = {'Origin': 'https://chat.jinshutuan.com' , 'Referer': 'https://chat.jinshutuan.com/'}
+    headers = {'Origin': 'https://chat12.yqcloud.top' , 'Referer': 'https://chat12.yqcloud.top/'}
     input_str = query
     if (input_str is None or input_str == "exit"):
         sys.exit()
