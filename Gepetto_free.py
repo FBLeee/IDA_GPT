@@ -294,9 +294,9 @@ def updateImage(query):
     tinydict = {}
     proxy_url = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
     proxies = {'http': proxy_url, 'https': proxy_url}
-    if (proxies is None):
-        proxies = {'http': 'http://localhost:7890',
-                   'https': 'http://localhost:7890'}
+    #if (proxies is None):
+    proxies = {'http': 'http://localhost:7890',
+               'https': 'http://localhost:7890'}
     headers = {'Origin': 'https://chat12.yqcloud.top' , 'Referer': 'https://chat12.yqcloud.top/'}
     input_str = query
     if (input_str is None or input_str == "exit"):
@@ -314,6 +314,8 @@ def updateImage(query):
     tinydict.update(tinydict4)
     x = requests.post(m, data=tinydict, proxies=proxies, headers=headers)
     return_str = x.text
+    
+    x.close()	# 注意关闭respons
 
     return return_str
     
