@@ -10,7 +10,6 @@
 ![image](https://user-images.githubusercontent.com/50468890/234507994-08d493ce-8645-4822-ad45-9f97cac2c6e1.png)
 
 ## 致谢
-[网站](https://chat12.yqcloud.top)  ，有兴趣自行了解  
 [Gepetto](https://github.com/JusticeRage/Gepetto)，站在大神Gepetto肩膀进行修改以下脚本  
 [Hex Rays](https://hex-rays.com/), the makers of IDA for their lightning fast support  
 [Clash for Windows](https://clashforwindows.org/clash-for-windows-official/)需用clash魔法上网（port：7890）
