@@ -13,3 +13,8 @@
 [Gepetto](https://github.com/JusticeRage/Gepetto)，站在大神Gepetto肩膀进行修改以下脚本  
 [Hex Rays](https://hex-rays.com/), the makers of IDA for their lightning fast support  
 [Clash for Windows](https://clashforwindows.org/clash-for-windows-official/)需用clash魔法上网（port：7890）
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=FBLeee/IDA_ChatGpt&type=Timeline)](https://star-history.com/#FBLeee/IDA_ChatGpt&Timeline)
+
