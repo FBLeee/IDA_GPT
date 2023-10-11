@@ -17,6 +17,31 @@ import ida_kernwin
 import idc
 # import openai
 
+import SparkApi
+
+
+
+
+#以下密钥信息从控制台获取
+appid = "XXXXXXXX"     #填写控制台中获取的 APPID 信息
+api_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"   #填写控制台中获取的 APISecret 信息
+api_key ="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    #填写控制台中获取的 APIKey 信息
+
+#用于配置大模型版本，默认“general/generalv2”
+domain = "general"   # v1.5版本
+# domain = "generalv2"    # v2.0版本
+#云端环境的服务地址
+Spark_url = "ws://spark-api.xf-yun.com/v1.1/chat"  # v1.5环境的地址
+# Spark_url = "ws://spark-api.xf-yun.com/v2.1/chat"  # v2.0环境的地址
+
+
+
+
+
+
+
+
+
 
 # =============================================================================
 # EDIT VARIABLES IN THIS SECTION
@@ -44,12 +69,12 @@ _ = translate.gettext
 # =============================================================================
 
 
-class GepettoPlugin(idaapi.plugin_t):
+class GepettoXunfeiPlugin(idaapi.plugin_t):
     flags = 0
-    explain_action_name = "gepetto:explain_function"
-    explain_menu_path = "Edit/Gepetto/" + _("Explain function")
-    rename_action_name = "gepetto:rename_function"
-    rename_menu_path = "Edit/Gepetto/" + _("Rename variables")
+    explain_action_name = "gepettoxunfei:explain_function"
+    explain_menu_path = "Edit/Gepetto_xunfei/" + _("Explain function")
+    rename_action_name = "gepettoxunfei:rename_function"
+    rename_menu_path = "Edit/Gepetto_xunfei/" + _("Rename variables")
     wanted_name = 'Gepetto'
     wanted_hotkey = ''
     comment = _("Uses gpt-free to enrich the decompiler's output")
@@ -65,7 +90,7 @@ class GepettoPlugin(idaapi.plugin_t):
         explain_action = idaapi.action_desc_t(self.explain_action_name,
                                               _('Explain function'),
                                               ExplainHandler(),
-                                              "Ctrl+Alt+G",
+                                              "Ctrl+Alt+1",
                                               _('Use gpt-free to explain the currently selected function'),
                                               199)
         idaapi.register_action(explain_action)
@@ -76,7 +101,7 @@ class GepettoPlugin(idaapi.plugin_t):
         rename_action = idaapi.action_desc_t(self.rename_action_name,
                                              _('Rename variables'),
                                              RenameHandler(),
-                                             "Ctrl+Alt+R",
+                                             "Ctrl+Alt+2",
                                              _("Use gpt-free to rename this function's variables"),
                                              199)
         idaapi.register_action(rename_action)
@@ -109,9 +134,9 @@ class ContextMenuHooks(idaapi.UI_Hooks):
         # Add actions to the context menu of the Pseudocode view
         if idaapi.get_widget_type(form) == idaapi.BWN_PSEUDOCODE:
             idaapi.attach_action_to_popup(
-                form, popup, GepettoPlugin.explain_action_name, "Gepetto/")
+                form, popup, GepettoXunfeiPlugin.explain_action_name, "Gepetto_xunfei/")
             idaapi.attach_action_to_popup(
-                form, popup, GepettoPlugin.rename_action_name, "Gepetto/")
+                form, popup, GepettoXunfeiPlugin.rename_action_name, "Gepetto_xunfei/")
 
 # -----------------------------------------------------------------------------
 
@@ -290,35 +315,42 @@ class RenameHandler(idaapi.action_handler_t):
 # =============================================================================
 
 
+
+ 
+text =[]
+
+def getText(role,content):
+    jsoncon = {}
+    jsoncon["role"] = role
+    jsoncon["content"] = content
+    text.append(jsoncon)
+    return text
+
+def getlength(text):
+    length = 0
+    for content in text:
+        temp = content["content"]
+        leng = len(temp)
+        length += leng
+    return length
+
+def checklen(text):
+    while (getlength(text) > 8000):
+        del text[0]
+    return text
+    
+
+
 def updateImage(query):
-    tinydict = {}
-    proxy_url = os.environ.get('HTTP_PROXY') or os.environ.get('HTTPS_PROXY')
-    proxies = {'http': proxy_url, 'https': proxy_url}
-    #if (proxies is None):
-    proxies = {'http': 'http://localhost:7890',
-               'https': 'http://localhost:7890'}
-    headers = {'Origin': 'https://chat12.yqcloud.top' , 'Referer': 'https://chat12.yqcloud.top/'}
-    input_str = query
-    if (input_str is None or input_str == "exit"):
-        sys.exit()
-    m = 'https://api.aichatos.cloud/api/generateStream'
-    tinydict2 = {"prompt": "nihao"}
-    tinydict2["prompt"] = input_str
-    tinydict.update(tinydict2)
 
-    tinydict3 = {"userId": "#/chat/{}".format(int(time.time() * 1000))}
-    tinydict.update(tinydict3)
+    text.clear
+    Input = query
+    question = checklen(getText("user",Input))
+    SparkApi.answer =""
+    #print("星火:",end = "")
+    return SparkApi.main(appid,api_key,api_secret,Spark_url,domain,question)
 
-    tinydict4 = {"network": True, "system": "",
-                 "withoutContext": False, "stream": False}
-    tinydict.update(tinydict4)
-    x = requests.post(m, data=tinydict, proxies=proxies, headers=headers)
-    return_str = x.text
-    
-    x.close()	# 注意关闭respons
 
-    return return_str
-    
 
 def query_model(query, cb, max_tokens=2500):
     """
@@ -361,4 +393,4 @@ def PLUGIN_ENTRY():
     #         print(_("Please edit this script to insert your OpenAI API key!"))
     #         raise ValueError("No valid OpenAI API key found")
 
-    return GepettoPlugin()
+    return GepettoXunfeiPlugin()
