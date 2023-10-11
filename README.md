@@ -19,7 +19,7 @@
 
 
 ### 2.3 放入ida
-将gepetto-locales 和 Gepetto_free.py脚本放到 IDA 插件文件夹 ( $IDAUSR/plugins)
+将gepetto-locales 和 Gepetto_free.py 、SparkApi.py脚本放到 IDA 插件文件夹 ( $IDAUSR/plugins)
 
 
 ## 3.使用
