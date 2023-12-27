@@ -20,7 +20,13 @@
             
 ## 效果图
 ![展示](https://github.com/FBLeee/IDA_AIGpt/assets/50468890/100f25ca-d8c1-4f11-8c9a-d74c6a91ddd5)
-   
+
+## GPT-4
+修改Model_GPT/FBleee_GPT.py中的代码，将model改成 "gpt-4",每天拥有10次免费使用的机会，GPT-4查询能力还是挺给力的（好像还没有字数限制）   
+
+      
+![image](https://github.com/FBLeee/IDA_AIGpt/assets/50468890/8666420d-2282-45fa-867e-596ec26447b7)
+
 
 ## 致谢
 [GPT-API-free](https://github.com/chatanywhere/GPT_API_free)   
