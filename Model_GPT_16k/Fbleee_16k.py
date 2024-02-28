@@ -170,7 +170,7 @@ class ExplainHandler(idaapi.action_handler_t):
     def activate(self, ctx):
         decompiler_output = ida_hexrays.decompile(idaapi.get_screen_ea())
         v = ida_hexrays.get_widget_vdui(ctx.widget)
-        query_model_async(_("你能解释下面伪C 函数的作用吗？\n"
+        query_model_async(_("分析以下C函数的功能：\n"
                             "{decompiler_output}").format(decompiler_output=str(decompiler_output)),
                           functools.partial(comment_callback, address=idaapi.get_screen_ea(), view=v))
         return 1
