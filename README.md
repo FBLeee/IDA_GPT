@@ -2,14 +2,14 @@
 集成gpt-3.5-turbo-16k模型到IDA插件中，利用GPT来解释IDA反汇编代码，更适合逆向需求。
 
 ## 使用步骤
+### 1. 科学上网      
 
-### 1.将脚本放入插件中
+
+### 2. 将脚本放入插件中
 将Model_GPT_16k中的gepetto-locales 和 Fbleee_16k.py 脚本放到 IDA 插件文件夹 ( $IDAUSR/plugins)
 
 
-​            
-
-### 2. 效果图
+### 3. 效果图
 
 ![1](https://github.com/FBLeee/IDA_GPT/assets/50468890/15271d25-0e8d-4109-8ade-7162ccc3adfb)
 
