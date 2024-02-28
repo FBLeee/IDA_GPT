@@ -11,16 +11,20 @@
 
 ### 2. 效果图
 
-![1](C:\Users\FH\Desktop\1.png)
+![1](https://github.com/FBLeee/IDA_GPT/assets/50468890/15271d25-0e8d-4109-8ade-7162ccc3adfb)
 
-## 对比
-1. 发现gpt-3.5-turbo-16k更适合对IDA反编译的伪C代码的解释说明。    
 
-2. 免费OpenAI key（如果想利用GPT-4等模型，有一定的免费额度，很少）
+## 说明
+1. 发现gpt-3.5-turbo-16k更适合对IDA伪C代码的解释说明。    
 
-   ![image-20240228104654637](C:\Users\FH\AppData\Roaming\Typora\typora-user-images\image-20240228104654637.png)
+2. 如果想利用GPT-4等模型需要使用自己的key，有一定的免费额度，但很少。https://gptgod.online/
+ ![image-20240228104937807](https://github.com/FBLeee/IDA_GPT/assets/50468890/ff79dc59-2807-49ff-97b7-abcebc9f5f6e)
+3. 免费OpenAI key只能使用下列模型（本项目使用此key）
+![image-20240228104654637](https://github.com/FBLeee/IDA_GPT/assets/50468890/39a4cd83-4f10-4e17-889a-9557a7472dfd)
 
-![image-20240228104937807](C:\Users\FH\AppData\Roaming\Typora\typora-user-images\image-20240228104937807.png)
+
+
+
 
 ## 致谢
 
