@@ -5,7 +5,7 @@
 
 ## 使用步骤
 ### 1. 科学上网      
-
+clash
 
 ### 2. 将脚本放入插件中
 将Model_GPT_16k中的gepetto-locales 和 Fbleee_16k.py 脚本放到 IDA 插件文件夹 ( $IDAUSR/plugins)
