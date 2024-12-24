@@ -9,8 +9,8 @@ Model_GPT,可用
 
 ## 致谢
 
-**[gpt4free-ts](https://github.com/xiangsx/gpt4free-ts)**，开源GPT项目  
-[Gepetto](https://github.com/JusticeRage/Gepetto)，基于Gepetto项目进行修改  
+**[GPT_API_free](https://github.com/xiangsx/gpt4free-ts)**，开源GPT免费项目  
+**[Gepetto](https://github.com/JusticeRage/Gepetto)**，基于Gepetto项目进行修改  
 [Hex Rays](https://hex-rays.com/), the makers of IDA for their lightning fast support  
 
 ## Star History
