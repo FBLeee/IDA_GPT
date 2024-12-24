@@ -26,14 +26,12 @@
 
 
 ## 3. GPT-4
-修改Model_GPT/FBleee_GPT.py中的代码，将model改成 "gpt-4",每天拥有3次免费使用的机会，GPT-4查询能力还是挺给力的（好像还没有字数限制）   
-
 ![image](https://github.com/user-attachments/assets/32c30804-0913-41f9-840c-df168a062e5e)
 
 
 ## 4. Update
-免费版支持gpt-4，一天3次；支持gpt-4o-mini，和gpt-3.5-turbo共享一天200次。
-更新free GPT的url
+1.免费版支持gpt-4，一天3次；支持gpt-4o-mini，和gpt-3.5-turbo共享一天200次。   
+2.更新free GPT的url
 
 ## 致谢
 [GPT-API-free](https://github.com/chatanywhere/GPT_API_free)   
