@@ -6,7 +6,7 @@
 
 [在开源github项目中免费获取API-KEY](https://github.com/chatanywhere/GPT_API_free) 
 
-### (2)打开开源项目
+### (2)下载开源项目
 
 [使用开源github项目Gepetto](https://github.com/JusticeRage/Gepetto)
 
