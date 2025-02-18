@@ -1,5 +1,5 @@
 # IDA_AIGpt
-Model_GPT,可用
+Model_GPT、Model_deepseek-R1  可用
 
 ## 说明
 将两个免费开源项目结合在一起。开源项目看致谢
