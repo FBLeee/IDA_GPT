@@ -13,8 +13,8 @@ https://mp.weixin.qq.com/s/CY5OGEiw8wvNy4rlbV1TdQ
 在 $IDAUSR\plugins\gepetto\config.ini   填入API密钥：你的FFA-API令牌
 
 
+![image](https://github.com/user-attachments/assets/137336b0-d1e3-48e5-92b9-013eeac963d3)
 
-![image-20250218170945640](C:\Users\FH\AppData\Roaming\Typora\typora-user-images\image-20250218170945640.png)
 
 
 
@@ -31,7 +31,7 @@ https://mp.weixin.qq.com/s/CY5OGEiw8wvNy4rlbV1TdQ
 
 
 # 致谢
-
+如有侵权，联系删除。
 [FFA-API](https://api.ffa.chat/)， 感谢免费开源
 [Gepetto](https://github.com/JusticeRage/Gepetto)，基于大神Gepetto项目修改
 [Hex Rays](https://hex-rays.com/), the makers of IDA for their lightning fast support
