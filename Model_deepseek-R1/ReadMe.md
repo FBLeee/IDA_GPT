@@ -16,9 +16,8 @@ https://mp.weixin.qq.com/s/CY5OGEiw8wvNy4rlbV1TdQ
 ![image](https://github.com/user-attachments/assets/137336b0-d1e3-48e5-92b9-013eeac963d3)
 
 
-
-
-
+## 3.将插件放入文件中
+将gepetto文件夹和gepetto.py放到 $IDAUSR\plugins中
 
 ## 使用小贴士
 
