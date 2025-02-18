@@ -2,7 +2,7 @@
 Model_GPT、Model_deepseek-R1  可用
 
 ## 说明
-将两个免费开源项目结合在一起。开源项目看致谢
+结合GPT或deepseek的免费API解释反汇编伪代码。开源项目看致谢
 
 
 
