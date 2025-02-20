@@ -2,7 +2,7 @@
 Model_GPT、Model_deepseek-R1  可用
 
 ## 说明
-结合GPT或deepseek的免费API解释反汇编伪代码。开源项目看致谢
+基于GPT或deepseek_R1的免费API,解释反汇编伪代码,提高效率。
 
 
 
