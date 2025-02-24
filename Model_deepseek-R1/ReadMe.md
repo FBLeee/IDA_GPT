@@ -20,7 +20,6 @@ https://mp.weixin.qq.com/s/CY5OGEiw8wvNy4rlbV1TdQ
 将gepetto文件夹和gepetto.py放到 $IDAUSR\plugins中
 
 ## 使用小贴士
-注意选择 **OpenAI**：deepseek-ai/DeepSeek-R1
 
 确保网络连接稳定：使用clash for windows的7890端口
 
