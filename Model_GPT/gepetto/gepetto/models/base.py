@@ -1,6 +1,6 @@
 import abc
 
-GPT3_MODEL_NAME = "gpt-3.5-turbo"
+GPT3_MODEL_NAME = "gpt-4o-mini"
 GPT4_MODEL_NAME = "gpt-4"
 
 class LanguageModel(abc.ABC):
