@@ -1,6 +1,6 @@
 import abc
 
-GPT3_MODEL_NAME = "deepseek-r1"
+GPT3_MODEL_NAME = "deepseek-ai/DeepSeek-R1"
 GPT4_MODEL_NAME = "deepseek-r1"
 
 class LanguageModel(abc.ABC):
