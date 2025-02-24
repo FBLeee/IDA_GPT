@@ -1,7 +1,7 @@
 import abc
 
 GPT3_MODEL_NAME = "deepseek-ai/DeepSeek-R1"
-GPT4_MODEL_NAME = "gpt-4o"
+GPT4_MODEL_NAME = "deepseek-ai/DeepSeek-R1"
 
 class LanguageModel(abc.ABC):
     @abc.abstractmethod
