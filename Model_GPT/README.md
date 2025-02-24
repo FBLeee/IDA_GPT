@@ -1,5 +1,5 @@
 # IDA_AIGpt
-集成GPT-Free API到IDA插件中，利用GPT来解释IDA反汇编代码，增加gpt-4o-mini模型（每天200次调用）
+集成GPT-Free API到IDA插件中，利用GPT来解释IDA反汇编代码，**增加gpt-4o-mini模型（每天200次调用）**   
 
 ## 1. 使用步骤
 ### (1) 获取免费的API-KEY
