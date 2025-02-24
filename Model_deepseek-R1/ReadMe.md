@@ -7,10 +7,6 @@
 根据以下步骤获取API秘钥：你的FFA-API令牌  
 
 https://mp.weixin.qq.com/s/CY5OGEiw8wvNy4rlbV1TdQ
-### 1.1 模型选择：deepseek-ai/DeepSeek-R1
-![image](https://github.com/user-attachments/assets/248d17f4-0477-4b4b-aa84-d729b5de4fa6)
-
-
 
 ## 2.填入令牌
 
