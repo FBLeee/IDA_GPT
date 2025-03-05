@@ -14,6 +14,12 @@ Model_GPT、Model_deepseek-R1  可用
 [Gepetto](https://github.com/JusticeRage/Gepetto)，基于Gepetto项目进行修改  
 [Hex Rays](https://hex-rays.com/), the makers of IDA for their lightning fast support  
 
+
+<!-- 
 ## Star History
 
-![Star History Chart](https://api.star-history.com/svg?repos=FBLeee/IDA_GPT&type=Date)
+![Star History Chart](https://api.star-history.com/svg?repos=FBLeee/IDA_GPT&type=Date) 
+
+
+-->
+
