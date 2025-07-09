@@ -1,4 +1,4 @@
-# IDA_AIGpt
+# IDA_LLMs
 Model_GPT、Model_deepseek-R1  可用
 
 ## 说明
